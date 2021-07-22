@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { createObservation } from "../utils/api"
 
 function ObservationCreate() {
   const history = useHistory();
+
+  const [observation, setObservation] = useState({
+      latitude: " ",
+      longitude: " ",
+      sky_condition: " ",
+  });
 
   function cancelHandler() {
     history.push("/");
